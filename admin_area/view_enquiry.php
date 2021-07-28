@@ -81,6 +81,8 @@ $run_enquiry_types = mysqli_query($con,$get_enquiry_types);
 
 while($row_enquiry_types = mysqli_fetch_array($run_enquiry_types)){
 
+$user_id = $row_enquiry_types['user_id'];
+
 $enquiry_id = $row_enquiry_types['enquiry_id'];
 
 $enquiry_title = $row_enquiry_types['enquiry_title'];
