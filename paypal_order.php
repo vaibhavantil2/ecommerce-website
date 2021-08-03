@@ -11,7 +11,7 @@ include("functions/functions.php");
 
 if(isset($_GET['c_id'])){
 
-$customer_id = $_GET['c_id'];
+$account_id = $_GET['c_id'];
 
 }
 
@@ -23,7 +23,7 @@ $invoice_no = mt_rand();
 
 $select_cart = "select * from cart where ip_add='$ip_add'";
 
-$run_cart = mysqli_query($con,$select_cart);
+$run_cart = mysqli_query($con,$select_cart, $account_id);
 
 while($row_cart = mysqli_fetch_array($run_cart)){
 
