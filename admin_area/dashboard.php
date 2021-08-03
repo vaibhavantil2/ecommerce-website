@@ -315,6 +315,9 @@ if($order_status=='pending'){
 
 echo $order_status='pending';
 
+} else if ($form->has('useSelected') && $form->get('useSelected')->isClicked()) { 
+      $address = $form->get('addresses')->getData();
+      echo $order_status='in-progress';
 }
 else {
 
