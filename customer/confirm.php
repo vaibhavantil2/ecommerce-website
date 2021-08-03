@@ -121,6 +121,8 @@ if(isset($_POST['confirm_payment'])){
 $update_id = $_GET['update_id'];
 
 $invoice_no = $_POST['invoice_no'];
+  
+$bank_name = $_POST['bank_name'];
 
 $amount = $_POST['amount_sent'];
 
