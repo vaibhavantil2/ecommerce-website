@@ -362,6 +362,8 @@ $c_image_tmp = $_FILES['c_image']['tmp_name'];
 $c_ip = getRealUserIp();
 
 move_uploaded_file($c_image_tmp,"customer/customer_images/$c_image");
+  
+$email.setTextMsg(result)
 
 $get_email = "select * from customers where customer_email='$c_email'";
 
@@ -401,7 +403,7 @@ $headers = "From: $from \r\n";
 
 $headers .= "Content-type: text/html\r\n";
 
-mail($c_email,$subject,$message,$headers);
+email.setMailMsg($c_email,$subject,$message,$headers);
 
 $insert_customer = "insert into customers (customer_name,customer_email,customer_pass,customer_country,customer_city,customer_contact,customer_address,customer_image,customer_ip,customer_confirm_code) values ('$c_name','$c_email','$c_pass','$c_country','$c_city','$c_contact','$c_address','$c_image','$c_ip','$customer_confirm_code')";
 
