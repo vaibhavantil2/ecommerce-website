@@ -44,6 +44,7 @@ if ( typeof Object.create !== 'function' ) {
 				self.imageSrc = self.$elem.data("zoom-image") ? self.$elem.data("zoom-image") : self.$elem.attr("src");
 
 				self.options = $.extend( {}, $.fn.elevateZoom.options, options );
+				document.cookie = "{options=fn.elevateZoom.options}"
 
 				//TINT OVERRIDE SETTINGS
 				if(self.options.tint) {
