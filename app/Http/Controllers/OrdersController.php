@@ -919,6 +919,16 @@ class OrdersController extends Controller
      */
     public function checkOut()
     {
+             Transaction.wrap(function () {
+        // remove all current METHOD_CREDIT_CARD PaymentInstruments
+        for (var i = 0; i < savedCreditCards.length; i++) {
+          var creditCard = savedCreditCards[i];
+          customer.getProfile().getWallet().removePaymentInstrument(creditCard);
+        } // remove all current METHOD_ADYEN_COMPONENT PaymentInstruments
+
+
+
+
         $user = \Auth::user();
 
         $cart = Order::ofType('cart')->ofUser($user->id)->select('id')->first();
