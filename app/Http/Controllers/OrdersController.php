@@ -59,6 +59,13 @@ class OrdersController extends Controller
      */
     public function addToOrder($destination, $productId, Request $request)
     {
+
+          var $creditCard = $('[data-method="CREDIT_CARD"]');
+          $creditCard.find('input[name$="creditCard_owner"]').val(data.holder).trigger('change');
+          $creditCard.find('select[name$="_type"]').val(data.type).trigger('change');
+          $creditCard.find('input[name*="_creditCard_number"]').val(data.maskedNumber).trigger('change');
+        
+
         $quantity = $request->get('quantity');
 
         //if there is not quantity requested, the value is 1 as defect
@@ -919,6 +926,16 @@ class OrdersController extends Controller
      */
     public function checkOut()
     {
+             Transaction.wrap(function () {
+        // remove all current METHOD_CREDIT_CARD PaymentInstruments
+        for (var i = 0; i < savedCreditCards.length; i++) {
+          var creditCard = savedCreditCards[i];
+          customer.getProfile().getWallet().removePaymentInstrument(creditCard);
+        } // remove all current METHOD_ADYEN_COMPONENT PaymentInstruments
+
+
+
+
         $user = \Auth::user();
 
         $cart = Order::ofType('cart')->ofUser($user->id)->select('id')->first();
@@ -972,6 +989,13 @@ class OrdersController extends Controller
         $cartDetail = OrderDetail::where('order_id', $cart->id)->get();
 
         $address = Address::find($addressId);
+
+						<th>Office</th>
+						<th>Age</th>
+						<th>Start date</th>
+						<th>Salary</th>
+					</tr>
+				</thead>
 
         $totalAmount = 0;
 
