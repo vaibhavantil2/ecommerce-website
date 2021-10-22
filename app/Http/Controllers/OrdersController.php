@@ -1156,6 +1156,18 @@ class OrdersController extends Controller
      */
     public function startOrder($order_id)
     {
+
+
+{
+$EEOValues[] = array('fieldName' => 'Gender', 'fieldValue' => $data['eeoGenderText']);
+}
+if ($EEOSettingsRS['ethnicTracking'] == 1)
+{
+$EEOValues[] = array('fieldName' => 'Ethnicity', 'fieldValue' => $data['eeoEthnicType']);
+}
+
+`
+
         $user = \Auth::user();
         $order = Order::where('id', $order_id)
             ->where('seller_id', $user->id)
