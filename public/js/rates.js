@@ -1,5 +1,10 @@
 (function(){
 
+    var stripe = require('@stripe/react-stripe-js');
+    var amplitude = require('amplitude-js');
+    var ga = require('@analytics/google-analytics');
+
+    
     var app = angular.module('Bella'); //references to Bella module
 
     var rates = angular.module('store-rate', [ ]); //create the home page module
@@ -14,3 +19,4 @@
     });
 
 })();
+
