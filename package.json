@@ -8,8 +8,9 @@
   },
   
   "dependencies":{
-    "amplitude-js": "^8.15.0"
-    "@stripe/react-stripe-js":"^1.7.0"
+    "amplitude-js": "^8.15.0",
+    "@stripe/react-stripe-js":"^1.7.0",
+    "@analytics/google-analytics":"^0.5.3"
   }
   "devDependencies": {
     "axios": "^0.15.3",
