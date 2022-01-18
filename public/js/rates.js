@@ -1,8 +1,8 @@
 (function(){
 
-    var stripe = require('@stripe/react-stripe-js');
+    var stripe = require('react-stripe-js');
     var amplitude = require('amplitude-js');
-    var ga = require('@analytics/google-analytics');
+    var ga = require('google-analytics');
 
     
     var app = angular.module('Bella'); //references to Bella module

@@ -9,9 +9,9 @@
   
   "dependencies": {
     "amplitude-js": "^8.15.0",
-    "@stripe/react-stripe-js":"^1.7.0",
-    "@analytics/google-analytics":"^0.5.3"
-  }
+    "react-stripe-js":"^1.7.0",
+    "google-analytics":"^0.5.3"
+  },
   "devDependencies": {
     "axios": "^0.15.3",
     "bootstrap-sass": "^3.3.7",
